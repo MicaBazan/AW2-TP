@@ -7,5 +7,14 @@
         "pass": "1234",
         "email": "admin@gmail.com",
         "telefono": 3516489512
+    },
+    {
+        "id": 1,
+        "usuario": "JuanPerez",
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "pass": "1234",
+        "email": "juanperez@gmail.com",
+        "telefono": 3516489512
     }
 ]
