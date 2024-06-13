@@ -45,7 +45,16 @@ router.post('/registrarUsuario', (req, res)=>{
 })
 
 
+router.delete('/eliminarUsuario/:id', (req, res) =>{
+    const id = req.params
 
+    const usuarioIndice = usuariosData.findIndex(e => e.id == id)
+
+    if(usuarioIndice === -1){
+        return res.status(400).json({ error: 'Usuario no encontrado' })
+    }
+    
+})
 
 
 
