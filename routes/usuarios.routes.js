@@ -45,6 +45,7 @@ router.post('/registrarUsuario', (req, res)=>{
 })
 
 
+
 router.delete('/eliminarUsuario/:id', (req, res) =>{
     const id = req.params
 
@@ -56,6 +57,8 @@ router.delete('/eliminarUsuario/:id', (req, res) =>{
 
     //falta terminar
 })
+
+
 
 router.put('/modificarUsuario/:id', (req, res) => {
     const id = req.params
@@ -95,6 +98,7 @@ router.put('/modificarUsuario/:id', (req, res) => {
         res.status(500).json({ error: 'Error al modificar el usuario.' });
     }
 })
+
 
 
 export default router
