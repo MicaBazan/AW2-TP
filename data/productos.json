@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nombre": "POLLO ENTERO",
+        "idCategoria": 1,
+        "Precio": 6.900,
+        "Descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
+        "Imagen": "url"
+    },
+    {
+        "id": 2,
+        "nombre": "POLLO PARILLERO",
+        "idCategoria": 1,
+        "Precio": 10.000,
+        "Descripcion": "EL pollo parrillero ya viene listo y condimentado para la parrilla y los exquisitos chorizos de pollo más la inigualable salchicha parrillera.",
+        "Imagen": "url"
+    }
+]

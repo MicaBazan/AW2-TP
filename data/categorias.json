@@ -1,0 +1,18 @@
+[
+    {
+        "idCategoria":1,
+        "nombre":"Pollo"    
+    },
+    {
+        "idCategoria":2,
+        "nombre":"Cerdo"    
+    },
+    {
+        "idCategoria":3,
+        "nombre":"Congelados"    
+    },
+    {
+        "idCategoria":4,
+        "nombre":"Huevos" 
+    }
+]

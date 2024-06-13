@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "usuario": "admin",
+        "nombre": "",
+        "apellido": "",
+        "pass": "1234",
+        "email": "admin@gmail.com",
+        "telefono": 3516489512
+    }
+]
