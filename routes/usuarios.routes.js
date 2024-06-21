@@ -1,6 +1,11 @@
 import { error } from "console"
 import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
+import jwt from 'jsonwebtoken'
+import { decodeToken } from "../utils/middleware.js"
+import bcrypt from 'bcryptjs'
+
+const SECRET_KEY = "_AQPsssHV56kFO7ImQL9DPEj5UzCYuLGB8bSAmedv74gLPueV9abm51Ca18rIGJC"
 
 const fileUsuarios = await readFile('./data/usuarios.json', 'utf-8')
 const usuariosData = JSON.parse(fileUsuarios)
@@ -23,12 +28,16 @@ router.post('/registrarUsuario', (req, res)=>{
 
     const id = usuariosData[usuariosData.length -1].id + 1 
 
+
+    const hashedPass = bcrypt.hashSync(pass, 8)
+    console.log(hashedPass)
+
     const registrarUsuario = {
         id,
         usuario,
         nombre,
         apellido,
-        pass,
+        pass: hashedPass,
         email,
         telefono
     }
@@ -102,14 +111,27 @@ router.put('/modificarUsuario/:id', async (req, res) => {
 })
 
 
+router.post('/login', (req,res) =>{
+    const email = req.body.email
+    const pass = req.body.pass
 
+    const result = usuariosData.find(e => e.email === email)
 
+    if(!result){
+        return res.status(404).send({estado: false})
+    }
 
+    const controlPass = bcrypt.compareSync(pass, result.pass)
+    console.log(controlPass)
 
-/*router.get('/todosUsuarios', (req,res)=>{
+    if(!controlPass){
+        return res.status(401).send({estado:false})
+    }
 
-    res.status(200).json({saludo: "prueba de que se conectaaaa"})
-})*/
+    const token = jwt.sign({...result},SECRET_KEY, {expiresIn: 86400})
 
+    res.status(200).json(token)
+
+})
 
 export default router
