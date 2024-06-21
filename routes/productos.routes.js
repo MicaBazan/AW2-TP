@@ -101,6 +101,23 @@ router.get('/buscarProducto/:nombre', async (req,res)=>{
     }
 })
 
+/*
+router.get('/buscarProductoId/:id', async (req,res)=>{
+    const id = req.params
+
+    const productoIndex = productosData.find(e => e.id === id)
+
+    if(productoIndex === -1) {
+        return res.status(400).json({ error: 'Producto no encontrado' })
+    }
+
+    try {
+        res.status(200).json(productoIndex)
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al mostrar el producto' })
+    }
+})
+*/
 
 router.delete('/eliminarProducto/:id', async (req,res)=>{
     const id = req.params.id
