@@ -15,6 +15,6 @@ app.listen(port, ()=>{
 })
 
 app.use('/categorias', categoriaRouter)
-app.use('./productos', productoRouter)
-app.use('./usuarios', usuariosRouter)
-app.use('./ordenes', ordenesRouter)
+app.use('/productos', productoRouter)
+app.use('/usuarios', usuariosRouter)
+app.use('/ordenes', ordenesRouter)

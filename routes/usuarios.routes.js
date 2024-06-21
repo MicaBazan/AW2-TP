@@ -1,5 +1,5 @@
-import { error } from "console"
-import e, { Router } from "express"
+//import { error } from "console"
+import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
 
 const fileUsuarios = await readFile('./data/usuarios.json', 'utf-8')
@@ -44,23 +44,94 @@ router.post('/registrarUsuario', (req, res)=>{
 
 })
 
+router.delete('/eliminarUsuario/:id', async (req, res) =>{
+    const id = req.params.id
 
+    const usuarioIndex = usuariosData.findIndex(user => user.id == id)
 
-router.delete('/eliminarUsuario/:id', (req, res) =>{
-    const id = req.params
-
-    const usuarioIndice = usuariosData.findIndex(e => e.id == id)
-
-    if(usuarioIndice === -1){
-        return res.status(400).json({ error: 'Usuario no encontrado' })
+    if (usuarioIndex === -1) {
+        return res.status(404).json({ error: 'Usuario no encontrado.' })
     }
 
-    //falta terminar
+    usuariosData.splice(usuarioIndex, 1)
+
+    try {
+        await writeFile('./data/usuarios.json', JSON.stringify(usuariosData, null, 2))
+        res.status(200).json({ message: 'Usuario eliminado correctamente.' })
+    } catch (error) {
+        return res.status(500).json({ error: 'Error al guardar los datos.' })
+    }
 })
 
 
 
-router.put('/modificarUsuario/:id', (req, res) => {
+
+
+
+router.put('/modificarUsuario/:id', async (req, res) => {
+    const id = req.params.id;
+    const { usuario, nombre, apellido, pass, email, telefono } = req.body
+
+    const usuarioIndex = usuariosData.findIndex(user => user.id == id);
+
+    if (usuarioIndex === -1) {
+        return res.status(404).json({ error: 'Usuario no encontrado.' });
+    }
+
+    const usuarioExistente = usuariosData.find(e => 
+        (e.usuario === usuario || e.email === email) && e.id != id
+    )
+
+    if (usuarioExistente) {
+        return res.status(400).json({ error: 'El nombre de usuario o el email ya existe.' })
+    }
+    
+    // Actualizar los datos del usuario
+    usuariosData[usuarioIndex] = {
+        ...usuariosData[usuarioIndex],
+        usuario,
+        nombre,
+        apellido,
+        pass,
+        email,
+        telefono
+    };
+
+    try {
+        await writeFile('./data/usuarios.json', JSON.stringify(usuariosData, null, 2));
+        res.status(200).json({ message: 'Usuario modificado correctamente.' });
+    } catch (error) {
+        return res.status(500).json({ error: 'Error al guardar los datos.' });
+    }
+})
+
+
+
+
+/*
+router.put('/modificarUsuario/:id',(req,res)=>{
+
+    const usuario = usuariosData.find(req.params.id, {
+        usuario: req.body.usuario,
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        pass: req.body.pass,
+        email: req.body.email,
+        telefono: req.body.telefono
+    }, {
+        new: true
+    })
+
+    if(!usuario){
+        return res.status(500).send('producto no actualizado')
+    }
+})*/
+
+
+
+
+/*
+router.put('/modificarUsuario/:id', async (req, res) => {
     const id = req.params
     const usuario = req.body.usuario
     const nombre = req.body.nombre
@@ -92,13 +163,18 @@ router.put('/modificarUsuario/:id', (req, res) => {
     if (telefono) usuariosData[usuarioIndex].telefono = telefono;
 
     try {
-        fs.writeFileSync('./data/usuarios.json', JSON.stringify(usuariosData, null, 2));
+        await writeFile('./data/usuarios.json', JSON.stringify(usuariosData, null, 2));
         res.status(200).json(usuariosData[usuarioIndex]);
     } catch (error) {
         res.status(500).json({ error: 'Error al modificar el usuario.' });
     }
 })
 
+
+router.get('/todosUsuarios', (req,res)=>{
+
+    res.status(200).json({saludo: "prueba de que se conectaaaa"})
+})*/
 
 
 export default router
