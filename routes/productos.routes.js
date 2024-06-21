@@ -1,3 +1,4 @@
+import { error } from "console"
 import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
 
@@ -46,5 +47,83 @@ router.post('/registrarProducto', async (req,res)=>{
     }
 })
 
+
+router.put('/modificarProducto/:id', async (req,res)=>{
+    const id = req.params.id
+    const { nombre, categoria, precio, descripcion, imagen } = req.body
+
+    const productoIndex = productosData.findIndex(e => e.id == id)
+
+    if(productoIndex === -1) {
+        return res.status(400).json({ error: 'Producto no encontrado' })
+    }
+
+    const buscarCategoria = categoriasData.find(e => e.nombre == categoria)
+
+    if(!buscarCategoria){
+        return res.status(400).json({error: 'Categoria no encontrada'})
+    }
+
+    productosData[productoIndex] = {
+        ...productosData[productoIndex],
+        nombre: nombre.toUpperCase(),
+        categoria: buscarCategoria.idCategoria,
+        precio,
+        descripcion,
+        imagen
+    }
+
+    try{
+        await writeFile('./data/productos.json', JSON.stringify(productosData, null, 2))
+        res.status(200).json({ mensaje: 'Producto modificado correctamente' })
+    }catch(error){
+        return res.status(500).json({ error: 'Error al guardar los datos.' })
+    }
+})
+
+router.get('/mostrarTodo', async (req,res)=>{
+    try{
+        res.status(200).json(productosData)
+    }
+    catch(error){
+        res.status(500).json({ mensaje: 'Error al mostrar los datos' })
+    }
+})
+
+router.get('/buscarProducto/:nombre', async (req,res)=>{
+    const nombre = req.params.nombre.toUpperCase()
+
+    const productoIndex = productosData.find(e => e.nombre.toUpperCase() === nombre)
+
+    if(productoIndex === -1) {
+        return res.status(400).json({ error: 'Producto no encontrado' })
+    }
+
+    try {
+        res.status(200).json(productoIndex)
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al mostrar el producto' })
+    }
+})
+
+
+router.delete('/eliminarProducto/:id', async (req,res)=>{
+    const id = req.params.id
+
+    const productoIndex = productosData.findIndex(e => e.id == id)
+
+    if(productoIndex === -1){
+        return res.status(404).json({ error: 'Producto no encontrado'})
+    }
+
+    productosData.splice(productoIndex, 1)
+
+    try {
+        await writeFile('./data/productos.json', JSON.stringify(productosData, null, 2))
+        res.status(200).json({ message: 'Producto eliminado correctamente.' })
+    } catch (error) {
+        return res.status(500).json({ error: 'Error al guardar los datos.' })
+    }
+})
 
 export default router

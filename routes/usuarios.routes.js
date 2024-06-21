@@ -95,7 +95,7 @@ router.put('/modificarUsuario/:id', async (req, res) => {
 
     try {
         await writeFile('./data/usuarios.json', JSON.stringify(usuariosData, null, 2));
-        res.status(200).json({ message: 'Usuario modificado correctamente.' });
+        res.status(200).json({ mensaje: 'Usuario modificado correctamente.' });
     } catch (error) {
         return res.status(500).json({ error: 'Error al guardar los datos.' });
     }

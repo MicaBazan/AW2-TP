@@ -1,50 +1,26 @@
 [
-    {
-        "id": 1,
-        "nombre": "POLLO ENTERO",
-        "idCategoria": 1,
-        "precio": 6.9,
-        "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
-        "imagen": "url"
-    },
-    {
-        "id": 2,
-        "nombre": "POLLO PARILLERO",
-        "idCategoria": 1,
-        "precio": 10,
-        "descripcion": "EL pollo parrillero ya viene listo y condimentado para la parrilla y los exquisitos chorizos de pollo más la inigualable salchicha parrillera.",
-        "imagen": "url"
-    },
-    {
-        "id": 3,
-        "nombre": "POLLO PARA PROBAR",
-        "idCategoria": 1,
-        "precio": 7.9,
-        "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
-        "imagen": "url"
-    },
-    {
-        "id": 4,
-        "nombre": "POLLO PARA PROBAR QUE FUNCIONA",
-        "idCategoria": 2,
-        "precio": 7.9,
-        "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
-        "imagen": "url"
-    },
-    {
-        "id": 5,
-        "nombre": "POLLO PARA PROBAR QUE FUNCIONA",
-        "categoria": 1,
-        "precio": 7.9,
-        "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
-        "imagen": "url"
-    },
-    {
-        "id": 6,
-        "nombre": "POLLO PARA PROBAR QUE FUNCIONA",
-        "categoria": 2,
-        "precio": 7.9,
-        "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
-        "imagen": "url"
-    }
+  {
+    "id": 1,
+    "nombre": "POLLO ENTERO",
+    "idCategoria": 1,
+    "precio": 6900,
+    "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
+    "imagen": "url"
+  },
+  {
+    "id": 2,
+    "nombre": "POLLO PARILLERO",
+    "idCategoria": 1,
+    "precio": 10000,
+    "descripcion": "EL pollo parrillero ya viene listo y condimentado para la parrilla y los exquisitos chorizos de pollo más la inigualable salchicha parrillera.",
+    "imagen": "url"
+  },
+  {
+    "id": 3,
+    "nombre": "POLLO PARA PROBAR",
+    "idCategoria": 1,
+    "precio": 7900,
+    "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
+    "imagen": "url"
+  }
 ]
