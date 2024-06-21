@@ -11,11 +11,6 @@ const categoriasData = JSON.parse(fileCategorias)
 const router = Router()
 
 
-router.get('/filtrarProductosCategoria/:categoria', (req, res) => {
-    
-})
-
-
 router.post('/registrarProducto', async (req,res)=>{
     const { nombre, idCategoria, precio, descripcion, imagen } = req.body
 
@@ -123,6 +118,26 @@ router.delete('/eliminarProducto/:id', async (req,res)=>{
         res.status(200).json({ message: 'Producto eliminado correctamente.' })
     } catch (error) {
         return res.status(500).json({ error: 'Error al guardar los datos.' })
+    }
+})
+
+router.get('/filtrarProductosCategoria/:categoria', (req, res) => {
+    const categoria = req.params.categoria
+
+    const categoriaIndex = categoriasData.find(e => e.nombre === categoria)
+
+    if(!categoriaIndex){
+        return res.status(400).json({error: 'Categoria no encontrada'})
+    }
+
+    const idCategoria = categoriaIndex.idCategoria
+
+    const productos = productosData.filter(e => e.idCategoria == idCategoria)
+
+    try {
+        res.status(200).json(productos)
+    } catch (error) {
+        return res.status(500).json({ error: 'Error al mostrar los datos.' })
     }
 })
 
