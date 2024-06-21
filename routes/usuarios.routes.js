@@ -64,10 +64,6 @@ router.delete('/eliminarUsuario/:id', async (req, res) =>{
 })
 
 
-
-
-
-
 router.put('/modificarUsuario/:id', async (req, res) => {
     const id = req.params.id;
     const { usuario, nombre, apellido, pass, email, telefono } = req.body
@@ -108,70 +104,9 @@ router.put('/modificarUsuario/:id', async (req, res) => {
 
 
 
-/*
-router.put('/modificarUsuario/:id',(req,res)=>{
-
-    const usuario = usuariosData.find(req.params.id, {
-        usuario: req.body.usuario,
-        nombre: req.body.nombre,
-        apellido: req.body.apellido,
-        pass: req.body.pass,
-        email: req.body.email,
-        telefono: req.body.telefono
-    }, {
-        new: true
-    })
-
-    if(!usuario){
-        return res.status(500).send('producto no actualizado')
-    }
-})*/
 
 
-
-
-/*
-router.put('/modificarUsuario/:id', async (req, res) => {
-    const id = req.params
-    const usuario = req.body.usuario
-    const nombre = req.body.nombre
-    const apellido = req.body.apellido
-    const pass = req.body.pass
-    const email = req.body.email
-    const telefono = req.body.telefono
-
-    const usuarioIndex = usuariosData.findIndex(user => user.id == id)
-
-    if (usuarioIndex === -1) {
-        return res.status(404).json({ error: 'Usuario no encontrado.' })
-    }
-
-    const usuarioExistente = usuariosData.find(e => 
-        (e.usuario === usuario || e.email === email) && e.id != id
-    )
-
-    if (usuarioExistente) {
-        return res.status(400).json({ error: 'El nombre de usuario o el email ya existe.' })
-    }
-
-    // Modificar los campos del usuario
-    if (usuario) usuariosData[usuarioIndex].usuario = usuario;
-    if (nombre) usuariosData[usuarioIndex].nombre = nombre;
-    if (apellido) usuariosData[usuarioIndex].apellido = apellido;
-    if (pass) usuariosData[usuarioIndex].pass = pass;
-    if (email) usuariosData[usuarioIndex].email = email;
-    if (telefono) usuariosData[usuarioIndex].telefono = telefono;
-
-    try {
-        await writeFile('./data/usuarios.json', JSON.stringify(usuariosData, null, 2));
-        res.status(200).json(usuariosData[usuarioIndex]);
-    } catch (error) {
-        res.status(500).json({ error: 'Error al modificar el usuario.' });
-    }
-})
-
-
-router.get('/todosUsuarios', (req,res)=>{
+/*router.get('/todosUsuarios', (req,res)=>{
 
     res.status(200).json({saludo: "prueba de que se conectaaaa"})
 })*/
