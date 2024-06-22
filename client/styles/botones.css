@@ -1,0 +1,16 @@
+:root{
+    --color-boton: green;
+}
+
+.boton_user{
+    margin-block: 15px;
+    padding-inline: 15px;
+    padding-block: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    color: #eeeeee;
+    background-color: var(--color-boton);
+    border: 1px solid #eeeeee;
+}

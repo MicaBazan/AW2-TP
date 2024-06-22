@@ -2,7 +2,6 @@ import { error } from "console"
 import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
 import jwt from 'jsonwebtoken'
-import { decodeToken } from "../utils/middleware.js"
 import bcrypt from 'bcryptjs'
 
 const SECRET_KEY = "_AQPsssHV56kFO7ImQL9DPEj5UzCYuLGB8bSAmedv74gLPueV9abm51Ca18rIGJC"
