@@ -1,4 +1,4 @@
-import { Router } from "express"
+/*import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
 import axios from 'axios'
 
@@ -44,4 +44,4 @@ router.post('/agregar', async (req,res)=>{
     }
 })
 
-export default router
+export default router*/
