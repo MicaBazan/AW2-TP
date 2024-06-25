@@ -12,17 +12,17 @@ const usuariosData = JSON.parse(fileUsuarios)
 const router = Router()
 
 router.post('/registrarUsuario', (req, res)=>{
-    const usuario = req.body.usuario
     const nombre = req.body.nombre
     const apellido = req.body.apellido
     const pass = req.body.pass
     const email = req.body.email
     const telefono = req.body.telefono
+    const rol = req.body.rol
 
-    const usuarioExistente = usuariosData.find(e => e.usuario === usuario || e.email === email)
+    const usuarioExistente = usuariosData.find(e => e.email === email)
 
     if (usuarioExistente){
-        return res.status(400).json({ error: 'El usuario o el email ya existe' })
+        return res.status(400).json({ error: 'El email ya se encuentra registrado' })
     }
 
     const id = usuariosData[usuariosData.length -1].id + 1 
@@ -33,12 +33,12 @@ router.post('/registrarUsuario', (req, res)=>{
 
     const registrarUsuario = {
         id,
-        usuario,
         nombre,
         apellido,
         pass: hashedPass,
         email,
-        telefono
+        telefono,
+        rol
     }
 
     usuariosData.push(registrarUsuario)
@@ -74,7 +74,7 @@ router.delete('/eliminarUsuario/:id', async (req, res) =>{
 
 router.put('/modificarUsuario/:id', async (req, res) => {
     const id = req.params.id;
-    const { usuario, nombre, apellido, pass, email, telefono } = req.body
+    const {nombre, apellido, pass, email, telefono, rol} = req.body
 
     const usuarioIndex = usuariosData.findIndex(user => user.id == id);
 
@@ -83,7 +83,7 @@ router.put('/modificarUsuario/:id', async (req, res) => {
     }
 
     const usuarioExistente = usuariosData.find(e => 
-        (e.usuario === usuario || e.email === email) && e.id != id
+        (e.email === email) && e.id != id
     )
 
     if (usuarioExistente) {
@@ -93,12 +93,12 @@ router.put('/modificarUsuario/:id', async (req, res) => {
     // Actualizar los datos del usuario
     usuariosData[usuarioIndex] = {
         ...usuariosData[usuarioIndex],
-        usuario,
         nombre,
         apellido,
         pass,
         email,
-        telefono
+        telefono,
+        rol
     };
 
     try {
@@ -127,9 +127,16 @@ router.post('/login', (req,res) =>{
         return res.status(401).send({estado:false})
     }
 
+    const rol = result.rol
+
     const token = jwt.sign({...result},SECRET_KEY, {expiresIn: 86400})
 
-    res.status(200).json(token)
+    try {
+        res.status(200).json({ estado: true, token, rol })
+    } catch (error) {
+        return res.status(500).json({ error: 'Error al ingresar.' })
+    }
+    
 
 })
 

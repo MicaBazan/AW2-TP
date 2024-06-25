@@ -1,65 +1,20 @@
 [
   {
     "id": 1,
-    "usuario": "admin",
     "nombre": "admin",
-    "apellido": "unico",
-    "pass": "1234",
+    "apellido": "admin",
+    "pass": "$2a$08$y6bgi1kwDXrVkXKq6Nhyguy3rHnF9/UuDT6rFJXyrPTgxfmjJu3a2",
     "email": "admin@gmail.com",
-    "telefono": 3516489512
+    "telefono": 351569842,
+    "rol": "admin"
   },
   {
     "id": 2,
-    "usuario": "JuanPerez",
-    "nombre": "Juan",
-    "apellido": "Perez",
-    "pass": "1234",
-    "email": "juanperez@gmail.com",
-    "telefono": 3516489512
-  },
-  {
-    "id": 3,
-    "usuario": "firulais",
-    "nombre": "Nuevo",
-    "apellido": "Apellido",
-    "pass": "nuevaContrasena",
-    "email": "holahiouh@haak.com",
-    "telefono": "1234567890"
-  },
-  {
-    "id": 4,
-    "usuario": "nuevofirulais",
-    "nombre": "Nuevo",
-    "apellido": "Apellido",
-    "pass": "nuevaContrasena",
-    "email": "firu@haak.com",
-    "telefono": "1234567890"
-  },
-  {
-    "id": 5,
-    "usuario": "firulaiscinco",
-    "nombre": "nuevo nombre",
-    "apellido": "nuevo apellido",
-    "pass": 1235,
-    "email": "queseyo@gmail.com",
-    "telefono": 351665444
-  },
-  {
-    "id": 6,
-    "usuario": "firulainco",
-    "nombre": "nuevo nombre",
-    "apellido": "nuevo apellido",
-    "pass": 1235,
-    "email": "firuhj@haak.com",
-    "telefono": 351665444
-  },
-  {
-    "id": 7,
-    "usuario": "como",
-    "nombre": "si",
-    "apellido": "sisi",
-    "pass": "$2a$08$sLy3rJiDOSvbXA77iQlZ8efeN1yiul/hZumPmnIN.TtVW1S/9CdNu",
-    "email": "comosisin@gmail.com",
-    "telefono": "3512465794"
+    "nombre": "user",
+    "apellido": "user",
+    "pass": "$2a$08$zqfs5AdDrSABkHEk/tKYFeIPoySHstg2EXrfPgm0pkzgbieoLVHJ2",
+    "email": "user@gmail.com",
+    "telefono": 351569842,
+    "rol": "usuario"
   }
 ]
