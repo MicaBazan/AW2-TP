@@ -4,7 +4,7 @@ import productoRouter from './routes/productos.routes.js'
 import usuariosRouter from './routes/usuarios.routes.js'
 import ordenesRouter from './routes/ordenes.routes.js'
 import cors from 'cors'
-//import carritoRouter from './routes/carro.routes.js'
+import carritoRouter from './routes/carro.routes.js'
 
 const app = express()
 const port = 3000
@@ -25,5 +25,5 @@ app.use('/categorias', categoriaRouter)
 app.use('/productos', productoRouter)
 app.use('/usuarios', usuariosRouter)
 app.use('/ordenes', ordenesRouter)
-//app.use('/carrito', carritoRouter)
+app.use('/carrito', carritoRouter)
 app.use(express.static("./client"))

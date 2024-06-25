@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "POLLO ENTERO",
+    "precio": 6900,
+    "cantidad": 1
+  },
+  {
+    "id": 4,
+    "nombre": "MAPLE - HUEVOS GRANDE",
+    "precio": 8000,
+    "cantidad": 3
+  }
+]
