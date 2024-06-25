@@ -22,9 +22,11 @@ router.post('/registrarProducto', async (req,res)=>{
         return res.status(400).json({error: 'Categoria no encontrada'})
     }
 
+    const nombreM = nombre.toUpperCase()
+
     const agregarProducto = {
         id,
-        nombre,
+        nombre : nombreM,
         categoria: categoria.idCategoria,
         precio,
         descripcion,

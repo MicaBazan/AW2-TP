@@ -32,19 +32,34 @@ window.addEventListener('load', async function(){
         const categoriaSeleccionada = selectCategoria.value
         
         try {
-            const res = await this.fetch(`${API}/productos/filtrarProductosCategoria/${categoriaSeleccionada}`)
 
-            if(!res.ok){
-                throw new Error(`HTTP error! estado: ${res.status}`)
+            if(categoriaSeleccionada == 'Todos'){
+                const res = await fetch(`${API}/productos/mostrarTodo`)
+
+                const data = await res.json()
+
+                contenedorProductos.innerHTML = ''
+
+                data.forEach(producto => {
+                    contenedorProductos.innerHTML += products(producto.nombre, producto.descripcion, producto.imagen, producto.precio)
+                });
             }
+            else{
 
-            const data = await res.json()
+                const res = await this.fetch(`${API}/productos/filtrarProductosCategoria/${categoriaSeleccionada}`)
 
-            contenedorProductos.innerHTML = ''
+                if(!res.ok){
+                    throw new Error(`HTTP error! estado: ${res.status}`)
+                }
 
-            data.forEach(producto => {
-                contenedorProductos.innerHTML += products(producto.nombre, producto.descripcion, producto.imagen, producto.precio)
-            });
+                const data = await res.json()
+
+                contenedorProductos.innerHTML = ''
+
+                data.forEach(producto => {
+                    contenedorProductos.innerHTML += products(producto.nombre, producto.descripcion, producto.imagen, producto.precio)
+                });
+            }
 
         } catch (error) {
             console.error('Error al cargar productos:', error)
