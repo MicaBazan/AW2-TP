@@ -21,5 +21,34 @@ window.addEventListener('load', async function(){
     } catch (error) {
         console.error('Error al cargar productos:', error)
     }
+})
 
+window.addEventListener('load', async function(){
+    const btnFiltrar = document.getElementById('btnFiltrar')
+    const selectCategoria = document.getElementById('selectCategoria')
+    const contenedorProductos = document.getElementById('contenedor-productos')
+
+    btnFiltrar.addEventListener('click', async () =>{
+        const categoriaSeleccionada = selectCategoria.value
+        
+        try {
+            const res = await this.fetch(`${API}/productos/filtrarProductosCategoria/${categoriaSeleccionada}`)
+
+            if(!res.ok){
+                throw new Error(`HTTP error! estado: ${res.status}`)
+            }
+
+            const data = await res.json()
+
+            contenedorProductos.innerHTML = ''
+
+            data.forEach(producto => {
+                contenedorProductos.innerHTML += products(producto.nombre, producto.descripcion, producto.imagen, producto.precio)
+            });
+
+        } catch (error) {
+            console.error('Error al cargar productos:', error)
+        }
+    
+    })
 })

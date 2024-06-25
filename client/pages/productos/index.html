@@ -39,15 +39,21 @@
 
     <main>
 
-        <section class="pt-5 pb-5 shadow dark:bg-gray-800">
-            <div class="flex flex-row gap-6 justify-around">
-                <div class="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
-                    <a href="#" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2" id="categoria-pollo">Pollo</a>
-                    <a href="#" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2" id="categoria-cerdo">Cerdo</a>
-                    <a href="#" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2" id="categoria-congelados">Congelados</a>
-                    <a href="#" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2" id="categoria-huevos">Huevos</a>
+        <section class="pt-5 pb-5">
+            <div class="flex flex-row gap-6 justify-center">
+                <div class="flex flex-col max-w-3xl mx-auto bg-white p-6 rounded-md shadow-md">
+                    <label for="selectCategoria" class="block text-sm font-medium text-gray-700 pb-3">Selecciona una categoría:</label>
+                    <select id="selectCategoria" class="block w-full mt-1 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="Pollo">Pollo</option>
+                        <option value="Cerdo">Cerdo</option>
+                        <option value="Congelados">Congelados</option>
+                        <option value="Huevos">Huevos</option>
+                    </select>
+
+                    <button id="btnFiltrar" class="mt-4 items-center px-10 py-2 border border-transparent text-base font-medium rounded-md text-white bg-amber-500 hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-900">
+                        Filtrar
+                    </button>
                 </div>
-    
                 <!-- Para buscar productos-->
                 <!--<div class="relative mt-4 md:mt-0">
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3">
