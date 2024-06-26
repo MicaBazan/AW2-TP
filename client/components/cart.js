@@ -1,20 +1,15 @@
-export const carro = (image, nombre, cantidad, precio)=>{
-    `
+export const carro = (nombre, cantidad, precioUnitario, precioTotal) => {
+    return `
     <li class="flex items-center gap-4">
-        <img src="${image}" alt="" class="size-16 rounded object-cover"/>
+        <img src="url" alt="" class="size-16 rounded object-cover"/>
             <div>
                 <h3 class="text-sm text-gray-900">${nombre}</h3>
+                <p class="text-sm text-gray-600">Cantidad: ${cantidad}</p>
+                <p class="text-sm text-gray-600">Precio Unitario: $${precioUnitario}</p>
+                <p class="text-sm text-gray-600">Precio total: $${precioTotal}</p>
             </div>
             
         <div class="flex flex-1 items-center justify-end gap-2">
-            <form>
-                <label for="Line1Qty" class="sr-only">${cantidad}</label>
-        
-                <input type="number" min="1" value="1" id="Line1Qty" class="h-8 w-12 rounded border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"/>
-                
-                <label for="Line1Qty" class="sr-only">${precio}</label>
-            </form>
-        
             <button class="text-gray-600 transition hover:text-red-600">
                 <span class="sr-only">Remove item</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
@@ -23,5 +18,6 @@ export const carro = (image, nombre, cantidad, precio)=>{
             </button>
         </div>
     </li>
-    `
-}
+    `;
+};
+

@@ -3,42 +3,36 @@
     "id": 1,
     "nombre": "POLLO ENTERO",
     "precio": 6900,
-    "cantidad": 9
+    "cantidad": 3
   },
   {
     "id": 4,
-    "nombre": "MAPLE - HUEVOS GRANDE",
-    "precio": 8000,
-    "cantidad": 10
+    "nombre": "MAPLE - HUEVOS MEDIANOS",
+    "precio": 6000,
+    "cantidad": 7
+  },
+  {
+    "id": 9,
+    "nombre": "NUGGETS DE POLLO CON QUESO X 400 GRS",
+    "precio": 3830,
+    "cantidad": 9
+  },
+  {
+    "id": 6,
+    "nombre": "MEDIA DOCENA - HUEVOS GRANDES",
+    "precio": 2100,
+    "cantidad": 24
   },
   {
     "id": 2,
     "nombre": "POLLO PARILLERO",
     "precio": 10000,
-    "cantidad": 3
-  },
-  {
-    "id": 6,
-    "nombre": "DOCENA - HUEVOS GRANDES",
-    "precio": 3000,
-    "cantidad": 2
-  },
-  {
-    "id": 8,
-    "nombre": "HAMBURGESAS DE POLLO X 12 UNIDADES",
-    "precio": 8370,
-    "cantidad": 2
-  },
-  {
-    "id": 9,
-    "nombre": "MEDALLON DE POLLO CON ESPINACA Y QUESO X 450 G",
-    "precio": 4170,
     "cantidad": 2
   },
   {
     "id": 5,
-    "nombre": "MAPLE - HUEVOS MEDIANOS",
-    "precio": 6000,
-    "cantidad": 1
+    "nombre": "DOCENA - HUEVOS GRANDES",
+    "precio": 3000,
+    "cantidad": 5
   }
 ]

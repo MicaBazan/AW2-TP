@@ -32,12 +32,12 @@ window.addEventListener('load', async function(){
                     });
                     const result = await res.json();
                     if (res.ok) {
-                        console.log('Producto agregado al carrito:', result)
+                        mostrarNotification('Producto agregado al carrito', 'success')
                     } else {
-                        console.error('Error al agregar producto al carrito:', result)
+                        mostrarNotification('Error al agregar producto al carrito', 'error')
                     }
                 } catch (error) {
-                    console.error('Error al agregar producto al carrito:', error)
+                    mostrarNotification('Error al agregar producto al carrito', 'error')
                 }
             });
         });
@@ -73,4 +73,28 @@ window.addEventListener('load', async function(){
         }
     });
 });
+
+
+function mostrarNotification(message, type){
+    const container = document.getElementById('notification-container')
+    const notification = document.createElement('div')
+
+    let bgColor
+
+    if (type === 'success') {
+        bgColor = 'bg-green-500'
+    } else if (type === 'error') {
+        bgColor = 'bg-red-500'
+    }
+
+    notification.className = `p-4 mb-2 text-white rounded ${bgColor}`
+    notification.innerText = message;
+
+    container.appendChild(notification);
+
+
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
 
