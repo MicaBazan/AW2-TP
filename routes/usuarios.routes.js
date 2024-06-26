@@ -17,7 +17,7 @@ router.post('/registrarUsuario', (req, res)=>{
     const pass = req.body.pass
     const email = req.body.email
     const telefono = req.body.telefono
-    const rol = req.body.rol
+    const rol = "usuario"
 
     const usuarioExistente = usuariosData.find(e => e.email === email)
 

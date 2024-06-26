@@ -19,16 +19,6 @@ window.addEventListener('load', async function(){
             document.getElementById('contenedor-productos').innerHTML += products(producto.nombre, producto.descripcion, producto.imagen, producto.precio)
         });
 
-        // Agrega los event listeners para los botones cargados dinámicamente
-        /*const buttons = document.querySelectorAll('#cargar-carrito');
-        buttons.forEach(button => {
-            button.addEventListener('click', async (event) => {
-                const nombre = event.target.getAttribute('nombre');
-                await agregarCarrito(nombre);
-            });
-        });*/
-
-
     } catch (error) {
         console.error('Error al cargar productos:', error)
     }
@@ -39,7 +29,7 @@ window.addEventListener('load', async function(){
     const selectCategoria = document.getElementById('selectCategoria')
     const contenedorProductos = document.getElementById('contenedor-productos')
 
-    btnFiltrar.addEventListener('click', async () =>{
+    btnFiltrar.addEventListener('sumbit', async () =>{
         const categoriaSeleccionada = selectCategoria.value
         
         try {
@@ -59,10 +49,6 @@ window.addEventListener('load', async function(){
 
                 const res = await this.fetch(`${API}/productos/filtrarProductosCategoria/${categoriaSeleccionada}`)
 
-                if(!res.ok){
-                    throw new Error(`HTTP error! estado: ${res.status}`)
-                }
-
                 const data = await res.json()
 
                 contenedorProductos.innerHTML = ''
@@ -79,6 +65,40 @@ window.addEventListener('load', async function(){
     })
 })
 
+
+const agregarCarroElements = document.getElementsByName('cargar-carrito')
+
+agregarCarroElements.forEach(agregarCarro => {
+    agregarCarro.addEventListener('click', async () => {
+        const nombreProductoElements = document.getElementsByName("nombre-producto")
+        
+        if (nombreProductoElements.length > 0) {
+            const nombre = nombreProductoElements[0].value;
+
+            try {
+                const res = await fetch(`${API}/carrito/agregar`, {
+                    method: 'POST',
+                    body: JSON.stringify({ nombre }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const text = await res.text()
+                console.log('Respuesta de texto crudo:', text)
+
+                const data = JSON.parse(text)
+
+                console.log(data)
+
+            } catch (error) {
+                console.error('Error al agregar producto al carrito:', error)
+            }
+        } else {
+            console.error('No se encontró ningún elemento')
+        }
+    });
+});
 
 
 
@@ -103,8 +123,6 @@ const agregarCarrito = async ()=>{
         console.log('Error al llamar al endpoint:', error)
     }
 }
-
-
 
 const agregarCarro = document.getElementById('cargar-carrito')
         agregarCarrito.addEventListener('click', async (e)=>{
