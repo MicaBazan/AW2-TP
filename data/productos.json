@@ -5,7 +5,7 @@
     "idCategoria": 1,
     "precio": 6900,
     "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
-    "imagen": "../client/recursos/image/pollo-entero.jpeg"
+    "imagen": "../../recursos/image/pollo-entero.jpeg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "idCategoria": 1,
     "precio": 10000,
     "descripcion": "EL pollo parrillero ya viene listo y condimentado para la parrilla y los exquisitos chorizos de pollo más la inigualable salchicha parrillera.",
-    "imagen": "../client/recursos/image/pollo-parrillero.webp"
+    "imagen": "../../recursos/image/pollo-parrillero.webp"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "idCategoria": 1,
     "precio": 7900,
     "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
-    "imagen": "../client/recursos/image/pollo-entero.jpeg"
+    "imagen": "../../recursos/image/pollo-entero.jpeg"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "categoria": 4,
     "precio": 8000,
     "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
-    "imagen": "../client/recursos/image/pollo-entero.jpeg"
+    "imagen": "../../recursos/image/pollo-entero.jpeg"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "categoria": 4,
     "precio": 6000,
     "descripcion": "30 Huevos Pastoriles Medianos (54 a 61.9 gramos cada uno). Para maximizar la calidad del huevo, te recomendamos almacenarnos en la heladera, con la punta hacia abajo.",
-    "imagen": "../client/recursos/image/pollo-entero.jpeg"
+    "imagen": "../../recursos/image/pollo-entero.jpeg"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "categoria": 4,
     "precio": 3000,
     "descripcion": "12 Huevos Pastoriles Grandes (62 a 69.9 gramos cada uno). Para maximizar la calidad del huevo, te recomendamos almacenarnos en la heladera, con la punta hacia abajo.",
-    "imagen": "../client/recursos/image/pollo-entero.jpeg"
+    "imagen": "../../recursos/image/pollo-entero.jpeg"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "categoria": 4,
     "precio": 2100,
     "descripcion": "6 Huevos Pastoriles Grandes (62 a 69.9 gramos cada uno). Para maximizar la calidad del huevo, te recomendamos almacenarnos en la heladera, con la punta hacia abajo.",
-    "imagen": "../client/recursos/image/pollo-entero.jpeg"
+    "imagen": "../../recursos/image/pollo-entero.jpeg"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "categoria": 3,
     "precio": 8370,
     "descripcion": "Las hamburguesas de pollo son riquísimas, muy fáciles de cocinar y son sin TACC! Este pack de 12 unidades te permite consumir la cantidad que quieras y siempre tenerlas guardadas en el freezer. ¡Super práctico y accesible!.",
-    "imagen": "../client/recursos/image/pollo-entero.jpeg"
+    "imagen": "../../recursos/image/pollo-entero.jpeg"
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "categoria": 3,
     "precio": 4170,
     "descripcion": "Los medallones de pollo son ideales para resolver de manera rápida y rica cualquier almuerzo o cena! Probalos y descubrí una nueva solución a tus comidas de todos los días.",
-    "imagen": "../client/recursos/image/pollo-entero.jpeg"
+    "imagen": "../../recursos/image/pollo-entero.jpeg"
   },
   {
     "id": 10,
@@ -77,6 +77,6 @@
     "categoria": 3,
     "precio": 3830,
     "descripcion": "Los Nuggets de pollo con queso son ideales para grandes y chicos! Probalos en picadas, para untar con salsitas o para comerlos con una rica guarnición!.",
-    "imagen": "../client/recursos/image/pollo-entero.jpeg"
+    "imagen": "../../recursos/image/pollo-entero.jpeg"
   }
 ]

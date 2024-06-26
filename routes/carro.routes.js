@@ -19,16 +19,15 @@ router.get('/carro', async (req, res)=>{
 })
 
 router.post('/agregar', async (req, res) => {
-    const { nombre } = req.body;
+    const {nombre} = req.body;
     const cantidad = 1
 
     try {
-        
         const respuesta = await axios.get(`http://localhost:3000/productos/buscarProducto/${nombre}`)
         const producto = respuesta.data;
 
         if (!producto) {
-            return res.status(400).json({ mensaje: 'Producto no encontrado' })
+            return res.status(400).json({ mensaje: 'Producto no encontrado', nombre: `${nombre}` })
         }
 
         const productoExiste = carritoData.find(p => p.id === producto.id)
