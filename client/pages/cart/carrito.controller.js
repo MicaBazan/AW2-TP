@@ -2,31 +2,6 @@ import { API } from '../../api/api.js'
 import { carro } from '../../components/cart.js'
 console.log(API)
 
-/*
-window.addEventListener('load', async function(){
-
-    try {
-        const res = await fetch(`${API}/carrito/carro`)
-
-        if (!res.ok) {
-            throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-
-        const data = await res.json()
-
-        console.log(data)
-
-        data.forEach(producto => {
-            document.getElementById('contenedor-productos-carro').innerHTML += carro(producto.nombre, producto.cantidad, producto.precio)
-        });
-
-    } catch (error) {
-        console.error('Error al cargar productos:', error)
-    }
-})*/
-
-
-//probandoo
 
 window.addEventListener('load', async function() {
     try {
@@ -52,37 +27,69 @@ window.addEventListener('load', async function() {
 
         document.getElementById('total-general').textContent = `$${totalGeneral}`
 
+        addEventListenersToButtons()
+        
     } catch (error) {
-        console.error('Error al cargar productos:', error);
+        console.error('Error al cargar productos:', error)
     }
 });
 
+function addEventListenersToButtons() {
+    const contenedor = document.getElementById('contenedor-productos-carro')
 
+    contenedor.addEventListener('click', async function(event) {
+        if (event.target.closest('button[data-nombre]')) {
+            const boton = event.target.closest('button[data-nombre]')
+            const nombreProducto = boton.getAttribute('data-nombre')
+            let cantidadProducto =  parseInt(boton.getAttribute('data-cantidad'))
+            const cantidadElemento = boton.closest('li').querySelector('.cantidad-producto')
+            const precioTotalElemento = boton.closest('li').querySelector('.precio-total-producto')
 
-//fin
+            console.log('Producto a eliminar:', nombreProducto)
+            try {
+                const res = await fetch(`${API}/carrito/eliminarProducto/${nombreProducto}`, {
+                    method: 'DELETE'
+                });
+                const resultado = await res.json()
 
+                if(res.ok){
+                    cantidadProducto--
 
-/*
-document.addEventListener('DOMContentLoaded', async function() {
-    try {
-        const res = await fetch(`${API}/carrito/carro`);
+                    if (cantidadProducto <= 0) {
+                        console.log('Producto eliminado')
+                        await fetch(`${API}/carrito/eliminar/${nombreProducto}`, {
+                            method: 'DELETE'
+                        })
+                        boton.closest('li').remove();
+                    } else {
+                        console.log('Actualizando cantidad del producto')
+                        cantidadElemento.textContent = `Cantidad: ${cantidadProducto}`
+                        const precioUnitario = parseFloat(boton.closest('li').querySelector('.precio-unitario').textContent.split('$')[1])
+                        const nuevoPrecioTotal = cantidadProducto * precioUnitario
+                        precioTotalElemento.textContent = `Precio total: $${nuevoPrecioTotal}`
+                        boton.setAttribute('data-cantidad', cantidadProducto)
+                    }
 
-        if (!res.ok) {
-            throw new Error(`HTTP error! Status: ${res.status}`);
+                    actualizarTotalGeneral()
+                }
+                
+
+            } catch (error) {
+                console.log('Error al eliminar el producto:', error)
+            }
         }
+    });
+}
 
-        const data = await res.json();
+function actualizarTotalGeneral() {
+    const productos = document.querySelectorAll('#contenedor-productos-carro li')
+    let totalGeneral = 0
 
-        console.log(data);
+    productos.forEach(producto => {
+        const cantidad = parseInt(producto.querySelector('.cantidad-producto').textContent.split(': ')[1])
+        const precioUnitario = parseFloat(producto.querySelector('.precio-unitario').textContent.split('$')[1])
+        totalGeneral += cantidad * precioUnitario
+    });
 
-        const contenedor = document.getElementById('contenedor-productos-carro');
-
-        data.forEach(producto => {
-            const productoHTML = carro(producto.nombre, producto.cantidad, producto.precio);
-            contenedor.insertAdjacentHTML('beforeend', productoHTML);
-        });
-
-    } catch (error) {
-        console.error('Error al cargar productos:', error);
-    }
-});*/
+    document.getElementById('total-general').textContent = `$${totalGeneral}`
+}

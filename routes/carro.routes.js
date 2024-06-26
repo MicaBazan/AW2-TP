@@ -45,7 +45,7 @@ router.post('/agregar', async (req, res) => {
                 precio: producto.precio,
                 cantidad: parseInt(cantidad)
             };
-            carritoData.push(nuevoProducto);
+            carritoData.push(nuevoProducto)
         }
 
         await writeFile('./data/carrito.json', JSON.stringify(carritoData, null, 2))
@@ -82,22 +82,21 @@ router.delete('/eliminar/:nombre', async (req,res)=>{
 router.delete('/eliminarProducto/:nombre', async (req, res) => {
     const { nombre } = req.params;
 
-    const productoExiste = carritoData.find(c => c.nombre === nombre);
+    const productoExiste = carritoData.find(c => c.nombre === nombre)
 
     if (!productoExiste) {
-        return res.status(400).json({ error: 'Producto no encontrado' });
+        return res.status(400).json({ error: 'Producto no encontrado' })
     }
 
-    // Reducir la cantidad del producto
     if (productoExiste.cantidad > 0) {
-        productoExiste.cantidad -= 1;
+        productoExiste.cantidad -= 1
     }
 
     try {
-        await writeFile('./data/carrito.json', JSON.stringify(carritoData, null, 2));
-        res.status(200).json({ mensaje: 'Cantidad reducida del producto en el carrito', carrito: carritoData });
+        await writeFile('./data/carrito.json', JSON.stringify(carritoData, null, 2))
+        res.status(200).json({ mensaje: 'Cantidad reducida del producto en el carrito', carrito: carritoData })
     } catch (error) {
-        res.status(500).json({ mensaje: 'Error al actualizar el carrito' });
+        res.status(500).json({ mensaje: 'Error al actualizar el carrito' })
     }
 });
 

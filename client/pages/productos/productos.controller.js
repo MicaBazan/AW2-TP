@@ -11,7 +11,7 @@ window.addEventListener('load', async function(){
         contenedorProductos.innerHTML = ''
         data.forEach(producto => {
             const productHTML = products(producto.nombre, producto.descripcion, producto.imagen, producto.precio);
-            contenedorProductos.innerHTML += productHTML;
+            contenedorProductos.innerHTML += productHTML
         });
         addEventListenersToButtons();
     }
@@ -23,13 +23,13 @@ window.addEventListener('load', async function(){
             button.addEventListener('click', async (event) => {
                 const nombreProducto = event.target.getAttribute('data-nombre')
                 try {
-                    const res = await fetch('http://localhost:3000/carrito/agregar', {
+                    const res = await fetch(`${API}/carrito/agregar`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({ nombre: nombreProducto })
-                    });
+                    })
                     const result = await res.json();
                     if (res.ok) {
                         mostrarNotification('Producto agregado al carrito', 'success')
@@ -39,8 +39,8 @@ window.addEventListener('load', async function(){
                 } catch (error) {
                     mostrarNotification('Error al agregar producto al carrito', 'error')
                 }
-            });
-        });
+            })
+        })
     }
 
     try {
@@ -60,14 +60,14 @@ window.addEventListener('load', async function(){
     btnFiltrar.addEventListener('click', async () => {
         const categoriaSeleccionada = selectCategoria.value
         try {
-            let res;
+            let res
             if(categoriaSeleccionada === 'Todos'){
                 res = await fetch(`${API}/productos/mostrarTodo`)
             } else {
                 res = await fetch(`${API}/productos/filtrarProductosCategoria/${categoriaSeleccionada}`)
             }
-            const data = await res.json();
-            renderProducts(data);
+            const data = await res.json()
+            renderProducts(data)
         } catch (error) {
             console.error('Error al cargar productos:', error)
         }
@@ -88,9 +88,9 @@ function mostrarNotification(message, type){
     }
 
     notification.className = `p-4 mb-2 text-white rounded ${bgColor}`
-    notification.innerText = message;
+    notification.innerText = message
 
-    container.appendChild(notification);
+    container.appendChild(notification)
 
 
     setTimeout(() => {

@@ -27,7 +27,7 @@ router.post('/registrarProducto', async (req,res)=>{
     const agregarProducto = {
         id,
         nombre : nombreM,
-        categoria: categoria.idCategoria,
+        idCategoria: categoria.idCategoria,
         precio,
         descripcion,
         imagen
@@ -64,7 +64,7 @@ router.put('/modificarProducto/:id', async (req,res)=>{
     productosData[productoIndex] = {
         ...productosData[productoIndex],
         nombre: nombre.toUpperCase(),
-        categoria: buscarCategoria.idCategoria,
+        idCategoria: buscarCategoria.idCategoria,
         precio,
         descripcion,
         imagen

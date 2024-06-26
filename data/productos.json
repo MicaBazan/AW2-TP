@@ -18,7 +18,7 @@
   {
     "id": 3,
     "nombre": "MAPLE - HUEVOS GRANDE",
-    "categoria": 4,
+    "idCategoria": 4,
     "precio": 8000,
     "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
     "imagen": "../../recursos/image/maple-grande.webp"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "nombre": "MAPLE - HUEVOS MEDIANOS",
-    "categoria": 4,
+    "idCategoria": 4,
     "precio": 6000,
     "descripcion": "30 Huevos Pastoriles Medianos (54 a 61.9 gramos cada uno). Para maximizar la calidad del huevo, te recomendamos almacenarnos en la heladera, con la punta hacia abajo.",
     "imagen": "../../recursos/image/maple-medianos.png"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "nombre": "DOCENA - HUEVOS GRANDES",
-    "categoria": 4,
+    "idCategoria": 4,
     "precio": 3000,
     "descripcion": "12 Huevos Pastoriles Grandes (62 a 69.9 gramos cada uno). Para maximizar la calidad del huevo, te recomendamos almacenarnos en la heladera, con la punta hacia abajo.",
     "imagen": "../../recursos/image/docena-huevo.png"
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "nombre": "MEDIA DOCENA - HUEVOS GRANDES",
-    "categoria": 4,
+    "idCategoria": 4,
     "precio": 2100,
     "descripcion": "6 Huevos Pastoriles Grandes (62 a 69.9 gramos cada uno). Para maximizar la calidad del huevo, te recomendamos almacenarnos en la heladera, con la punta hacia abajo.",
     "imagen": "../../recursos/image/media-docena.jpg"
@@ -50,7 +50,7 @@
   {
     "id": 7,
     "nombre": "HAMBURGESAS DE POLLO X 12 UNIDADES",
-    "categoria": 3,
+    "idCategoria": 3,
     "precio": 8370,
     "descripcion": "Las hamburguesas de pollo son riquísimas, muy fáciles de cocinar y son sin TACC! Este pack de 12 unidades te permite consumir la cantidad que quieras y siempre tenerlas guardadas en el freezer. ¡Super práctico y accesible!.",
     "imagen": "../../recursos/image/hamburguesax12.png"
@@ -58,7 +58,7 @@
   {
     "id": 8,
     "nombre": "MEDALLON DE POLLO CON ESPINACA Y QUESO X 450 G",
-    "categoria": 3,
+    "idCategoria": 3,
     "precio": 4170,
     "descripcion": "Los medallones de pollo son ideales para resolver de manera rápida y rica cualquier almuerzo o cena! Probalos y descubrí una nueva solución a tus comidas de todos los días.",
     "imagen": "../../recursos/image/medallon-de-pollo-con-espinaca.jpg"
@@ -66,7 +66,7 @@
   {
     "id": 9,
     "nombre": "NUGGETS DE POLLO CON QUESO X 400 GRS",
-    "categoria": 3,
+    "idCategoria": 3,
     "precio": 3830,
     "descripcion": "Los Nuggets de pollo con queso son ideales para grandes y chicos! Probalos en picadas, para untar con salsitas o para comerlos con una rica guarnición!.",
     "imagen": "../../recursos/image/nuggets.png"
