@@ -1,7 +1,7 @@
-export const carro = (nombre, cantidad, precioUnitario, precioTotal) => {
+export const carro = (nombre, cantidad, precioUnitario, precioTotal, imagen) => {
     return `
     <li class="flex items-center gap-4">
-        <img src="url" alt="" class="size-16 rounded object-cover"/>
+        <img src="${imagen}" alt="" class="size-16 rounded object-cover"/>
             <div>
                 <h3 class="text-sm text-gray-900 nombre-producto-carro">${nombre}</h3>
                 <p class="text-sm text-gray-600 cantidad-producto">Cantidad: ${cantidad}</p>

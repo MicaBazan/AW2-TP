@@ -118,8 +118,8 @@ router.get('/buscarProductoId/:id', async (req,res)=>{
     } catch (error) {
         res.status(500).json({ mensaje: 'Error al mostrar el producto' })
     }
-})
-*/
+})*/
+
 
 router.delete('/eliminarProducto/:id', async (req,res)=>{
     const id = req.params.id

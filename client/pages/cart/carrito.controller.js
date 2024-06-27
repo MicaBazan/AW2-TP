@@ -18,12 +18,24 @@ window.addEventListener('load', async function() {
         const contenedor = document.getElementById('contenedor-productos-carro')
         let totalGeneral = 0
 
-        data.forEach(producto => {
+        for (const producto of data) {
             const precioTotal = producto.cantidad * producto.precio
             totalGeneral += precioTotal
 
-            contenedor.innerHTML += carro(producto.nombre, producto.cantidad, producto.precio, precioTotal);
-        });
+            const nombreProducto = producto.nombre
+
+            const buscarImagenRes = await fetch(`${API}/productos/buscarProducto/${nombreProducto}`)
+            
+            if (!buscarImagenRes.ok) {
+                throw new Error(`HTTP error! Status: ${buscarImagenRes.status}`)
+            }
+
+            const buscarImagenData = await buscarImagenRes.json()
+            const imagen = buscarImagenData.imagen
+
+            contenedor.innerHTML += carro(producto.nombre, producto.cantidad, producto.precio, precioTotal, imagen);
+        }
+
 
         document.getElementById('total-general').textContent = `$${totalGeneral}`
 
