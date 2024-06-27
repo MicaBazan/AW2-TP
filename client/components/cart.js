@@ -3,7 +3,7 @@ export const carro = (nombre, cantidad, precioUnitario, precioTotal) => {
     <li class="flex items-center gap-4">
         <img src="url" alt="" class="size-16 rounded object-cover"/>
             <div>
-                <h3 class="text-sm text-gray-900">${nombre}</h3>
+                <h3 class="text-sm text-gray-900 nombre-producto-carro">${nombre}</h3>
                 <p class="text-sm text-gray-600 cantidad-producto">Cantidad: ${cantidad}</p>
                 <p class="text-sm text-gray-600 precio-unitario">Precio Unitario: $${precioUnitario}</p>
                 <p class="text-sm text-gray-600 precio-total-producto">Precio total: $${precioTotal}</p>

@@ -50,7 +50,7 @@ function addEventListenersToButtons() {
                 const res = await fetch(`${API}/carrito/eliminarProducto/${nombreProducto}`, {
                     method: 'DELETE'
                 });
-                const resultado = await res.json()
+                //const resultado = await res.json()
 
                 if(res.ok){
                     cantidadProducto--
@@ -116,24 +116,27 @@ confirmarOrden.addEventListener('click', async function() {
 
         if (res.ok) {
             const data = await res.json();
+            const nombreProductos = document.querySelectorAll('.nombre-producto-carro')
             console.log('Orden guardada con éxito:', data)
             alert('Orden confirmada con éxito')
-            window.location.href = "../usuario/index.html"
-            const eliminarCarrito = await fetch(`${API}/carrito/eliminarCarro`, {
-                method: 'DELETE'
-            });
+            
+            for(const nombreProducto of nombreProductos) {
+                const nombreProductoTexto = nombreProducto.textContent
+                try {
+                    const eliminarCarrito = await fetch(`${API}/carrito/eliminar/${nombreProductoTexto}`, {
+                        method: 'DELETE'
+                    })
 
-            if (eliminarCarrito.ok) {
-                console.log('Carrito eliminado con éxito');
-                // Redireccionar después de eliminar el carrito
-                window.location.href = "../usuario/index.html";
-            } else {
-                const errorData = await eliminarCarrito.json();
-                console.error('Error al eliminar el carrito:', errorData);
-                alert('Error al eliminar el carrito, por favor intenta de nuevo');
-                // Aquí podrías decidir qué hacer si falla la eliminación del carrito
+                    if(eliminarCarrito.ok){
+                        console.log('Producto eliminado con exito')
+                    }
+                } catch (error) {
+                    const errorData = await eliminarCarrito.json()
+                    console.log('Error al elimiinar el carrito', errorData)
+                }
             }
-
+            
+            window.location.href = "../usuario/index.html"
         } else {
             const errorData = await res.json()
             console.error('Error al guardar la orden:', errorData)
