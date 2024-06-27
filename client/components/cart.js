@@ -18,6 +18,6 @@ export const carro = (nombre, cantidad, precioUnitario, precioTotal, imagen) => 
             </button>
         </div>
     </li>
-    `;
-};
+    `
+}
 

@@ -8,8 +8,8 @@ formLogIn.addEventListener('submit',async (e)=>{
     try {
         await logIn();
     } catch (error) {
-        console.error('Error al procesar la solicitud:', error);
-        error.textContent = "Error al conectar con el servidor";
+        console.error('Error al procesar la solicitud:', error)
+        error.textContent = "Error al conectar con el servidor"
     }
 })
 

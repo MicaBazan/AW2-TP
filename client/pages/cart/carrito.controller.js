@@ -33,7 +33,7 @@ window.addEventListener('load', async function() {
             const buscarImagenData = await buscarImagenRes.json()
             const imagen = buscarImagenData.imagen
 
-            contenedor.innerHTML += carro(producto.nombre, producto.cantidad, producto.precio, precioTotal, imagen);
+            contenedor.innerHTML += carro(producto.nombre, producto.cantidad, producto.precio, precioTotal, imagen)
         }
 
 
@@ -124,7 +124,7 @@ confirmarOrden.addEventListener('click', async function() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ email })
-        });
+        })
 
         if (res.ok) {
             const data = await res.json();

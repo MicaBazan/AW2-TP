@@ -76,10 +76,10 @@ router.put('/modificarUsuario/:id', async (req, res) => {
     const id = req.params.id;
     const {nombre, apellido, pass, email, telefono, rol} = req.body
 
-    const usuarioIndex = usuariosData.findIndex(user => user.id == id);
+    const usuarioIndex = usuariosData.findIndex(user => user.id == id)
 
     if (usuarioIndex === -1) {
-        return res.status(404).json({ error: 'Usuario no encontrado.' });
+        return res.status(404).json({ error: 'Usuario no encontrado.' })
     }
 
     const usuarioExistente = usuariosData.find(e => 
@@ -102,10 +102,10 @@ router.put('/modificarUsuario/:id', async (req, res) => {
     };
 
     try {
-        await writeFile('./data/usuarios.json', JSON.stringify(usuariosData, null, 2));
-        res.status(200).json({ mensaje: 'Usuario modificado correctamente.' });
+        await writeFile('./data/usuarios.json', JSON.stringify(usuariosData, null, 2))
+        res.status(200).json({ mensaje: 'Usuario modificado correctamente.' })
     } catch (error) {
-        return res.status(500).json({ error: 'Error al guardar los datos.' });
+        return res.status(500).json({ error: 'Error al guardar los datos.' })
     }
 })
 

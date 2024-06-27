@@ -10,13 +10,12 @@ window.addEventListener('load', async function(){
     function renderProducts(data) {
         contenedorProductos.innerHTML = ''
         data.forEach(producto => {
-            const productHTML = products(producto.nombre, producto.descripcion, producto.imagen, producto.precio);
+            const productHTML = products(producto.nombre, producto.descripcion, producto.imagen, producto.precio)
             contenedorProductos.innerHTML += productHTML
         });
-        addEventListenersToButtons();
+        addEventListenersToButtons()
     }
 
-    // Función para agregar eventos a los botones
     function addEventListenersToButtons() {
         const buttons = document.querySelectorAll('[data-nombre]')
         buttons.forEach(button => {
@@ -94,7 +93,7 @@ function mostrarNotification(message, type){
 
 
     setTimeout(() => {
-        notification.remove();
+        notification.remove()
     }, 3000);
 }
 

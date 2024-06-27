@@ -19,7 +19,7 @@ router.get('/carro', async (req, res)=>{
 })
 
 router.post('/agregar', async (req, res) => {
-    const {nombre} = req.body;
+    const {nombre} = req.body
     const cantidad = 1
 
     try {
