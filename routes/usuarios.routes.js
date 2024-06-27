@@ -140,5 +140,21 @@ router.post('/login', (req,res) =>{
 
 })
 
+router.get('/obtenerUsuario/:id', (req, res)=>{
+    const id = req.params.id
+
+    const usuarioEncontrado = usuariosData.find(e=> e.id == id)
+
+    if(!usuarioEncontrado){
+        return res.status(400).send({estado: false})
+    }
+
+    try {
+        res.status(200).json(usuarioEncontrado)
+    } catch (error) {
+        res.status(500).json({mensaje: 'Error al mostrar al usuario'})
+    }
+})
+
 
 export default router

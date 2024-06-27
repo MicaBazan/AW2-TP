@@ -31,6 +31,7 @@ router.post('/cargarOrden', async (req,res)=>{
         }
 
         const total = respuestaCarrito.data.reduce((sum, item) => sum + item.precio * item.cantidad, 0)
+        
         let idOrden = 1
 
         if(ordenesData.length > 0){
@@ -60,5 +61,12 @@ router.post('/cargarOrden', async (req,res)=>{
     }
 })
 
+router.get('/obtenerOrdenes', async (req, res) =>{
+    try {
+        res.status(200).json(ordenesData)
+    } catch (error) {
+        res.status(500).json({mensaje: 'Error al obtener las ordenes de compra'})
+    }
+})
 
 export default router

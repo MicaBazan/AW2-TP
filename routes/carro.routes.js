@@ -11,9 +11,6 @@ const productosData = JSON.parse(fileProductos)
 const router = Router()
 
 router.get('/carro', async (req, res)=>{
-
-    
-
     try {
         res.status(200).json(carritoData)
     } catch (error) {

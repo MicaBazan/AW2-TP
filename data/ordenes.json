@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "id": 1,
+    "idUsuario": 2,
+    "fecha": "2024-06-27T04:09:39.457Z",
+    "productos": [
+      {
+        "idProducto": 2,
+        "cant": 3
+      },
+      {
+        "idProducto": 1,
+        "cant": 2
+      }
+    ],
+    "total": 43800,
+    "estado": "Pendiente"
+  }
+]

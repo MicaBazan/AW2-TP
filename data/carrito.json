@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": 2,
+    "nombre": "POLLO PARILLERO",
+    "precio": 10000,
+    "cantidad": 3
+  },
+  {
+    "id": 1,
+    "nombre": "POLLO ENTERO",
+    "precio": 6900,
+    "cantidad": 2
+  }
+]
