@@ -161,3 +161,11 @@ confirmarOrden.addEventListener('click', async function() {
         alert('Error de conexión al intentar confirmar la orden')
     }
 })
+
+
+const botonCerrar = document.getElementById('cerrar-sesion')
+
+botonCerrar.addEventListener('click', ()=>{
+    sessionStorage.removeItem('email')
+    window.location.href = '../../../index.html'
+})
