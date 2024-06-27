@@ -129,7 +129,7 @@ router.post('/login', (req,res) =>{
 
     const rol = result.rol
 
-    const token = jwt.sign({...result},SECRET_KEY, {expiresIn: 86400})
+    const token = jwt.sign({idUsuario: result.id,...result},SECRET_KEY, {expiresIn: 86400})
 
     try {
         res.status(200).json({ estado: true, token, rol })
@@ -139,5 +139,6 @@ router.post('/login', (req,res) =>{
     
 
 })
+
 
 export default router

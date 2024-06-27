@@ -1,11 +1,1 @@
-[
-    {
-        "id":1,
-        "idUsuario":1,
-        "fecha":"",
-        "productos":[1,2,3],
-        "subtotal":0,
-        "total":0,
-        "estado": "Completado"
-    }
-]
+[]

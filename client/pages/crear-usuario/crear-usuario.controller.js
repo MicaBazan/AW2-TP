@@ -2,7 +2,6 @@ import { API } from "../../api/api.js"
 
 const formRegistrarUser = document.getElementById('formulario-registro')
 
-
 formRegistrarUser.addEventListener('sumbit', async function(){
     const nombre = document.getElementById('nombre-registro').value
     const apellido = document.getElementById('apellido-registro').value

@@ -93,3 +93,41 @@ function actualizarTotalGeneral() {
 
     document.getElementById('total-general').textContent = `$${totalGeneral}`
 }
+
+
+const confirmarOrden = document.getElementById('confirmar-orden')
+
+confirmarOrden.addEventListener('click', async function() {
+    const email = sessionStorage.getItem('email')
+
+    if (!email) {
+        console.log('Email no encontrado')
+        return;
+    }
+
+    try {
+        const res = await fetch(`${API}/ordenes/cargarOrden`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email })
+        });
+
+        if (res.ok) {
+            const data = await res.json();
+            console.log('Orden guardada con éxito:', data)
+            alert('Orden confirmada con éxito')
+            window.location.href = "../usuario/index.html"
+        } else {
+            const errorData = await res.json()
+            console.error('Error al guardar la orden:', errorData)
+            alert('Error al confirmar la orden, debes llenar el carrito.')
+            window.location.href = "../productos/index.html"
+            
+        }
+    } catch (error) {
+        console.error('Error de conexión:', error)
+        alert('Error de conexión al intentar confirmar la orden')
+    }
+})

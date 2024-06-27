@@ -42,7 +42,7 @@ const logIn = async()=>{
                 error.textContent = "Rol de usuario desconocido"
             }
 
-            sessionStorage.setItem('email', JSON.stringify(data))
+            sessionStorage.setItem('email', email)
         }
         else{
             error.textContent = "Error al encontrar al usuario"

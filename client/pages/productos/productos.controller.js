@@ -32,7 +32,7 @@ window.addEventListener('load', async function(){
                     })
                     const result = await res.json();
                     if (res.ok) {
-                        mostrarNotification('Producto agregado al carrito', 'success')
+                        mostrarNotification('Producto agregado al carrito', 'exito')
                     } else {
                         mostrarNotification('Error al agregar producto al carrito', 'error')
                     }
@@ -81,7 +81,7 @@ function mostrarNotification(message, type){
 
     let bgColor
 
-    if (type === 'success') {
+    if (type === 'exito') {
         bgColor = 'bg-green-500'
     } else if (type === 'error') {
         bgColor = 'bg-red-500'
