@@ -30,3 +30,9 @@ botonCerrar.addEventListener('click', ()=>{
     sessionStorage.removeItem('email')
     window.location.href = '../../../index.html'
 })
+
+const botonCrearProducto = document.getElementById('crear-producto')
+
+botonCrearProducto.addEventListener('click', ()=>{
+    window.location.href = './crear-producto.html'
+})

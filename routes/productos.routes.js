@@ -12,7 +12,7 @@ const router = Router()
 
 
 router.post('/registrarProducto', async (req,res)=>{
-    const { nombre, idCategoria, precio, descripcion, imagen } = req.body
+    const { nombre, idCategoria, precio, descripcion } = req.body
 
     const id = productosData[productosData.length -1].id + 1
     
@@ -30,7 +30,7 @@ router.post('/registrarProducto', async (req,res)=>{
         idCategoria: categoria.idCategoria,
         precio,
         descripcion,
-        imagen
+        imagen: 'url'
     }
 
     productosData.push(agregarProducto)

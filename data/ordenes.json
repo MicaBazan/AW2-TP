@@ -15,5 +15,22 @@
     ],
     "total": 43800,
     "estado": "Pendiente"
+  },
+  {
+    "id": 2,
+    "idUsuario": 3,
+    "fecha": "2024-06-27T16:05:16.519Z",
+    "productos": [
+      {
+        "idProducto": 1,
+        "cant": 4
+      },
+      {
+        "idProducto": 2,
+        "cant": 3
+      }
+    ],
+    "total": 57600,
+    "estado": "Pendiente"
   }
 ]

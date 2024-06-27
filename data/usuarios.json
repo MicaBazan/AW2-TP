@@ -16,5 +16,14 @@
     "email": "user@gmail.com",
     "telefono": 351569842,
     "rol": "usuario"
+  },
+  {
+    "id": 3,
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "pass": "$2a$08$AMx5j.TOGh7Ib38ktV.sY./rkrWpgu2Iln43k2bUa.yvVwusgmQ9u",
+    "email": "juanperez@gmail.com",
+    "telefono": 3516598742,
+    "rol": "usuario"
   }
 ]

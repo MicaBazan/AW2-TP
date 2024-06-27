@@ -2,7 +2,7 @@ import { API } from "../../api/api.js"
 
 const formRegistrarUser = document.getElementById('formulario-registro')
 
-formRegistrarUser.addEventListener('sumbit', async function(){
+formRegistrarUser.addEventListener('submit', async function(){
     const nombre = document.getElementById('nombre-registro').value
     const apellido = document.getElementById('apellido-registro').value
     const email = document.getElementById('email-registro').value
@@ -20,6 +20,7 @@ formRegistrarUser.addEventListener('sumbit', async function(){
 
         const data = await res.json()
         console.log('Registro exitoso:', data)
+        window.location.href = '../../../index.html'
 
     } catch (error) {
         console.log('Error en el registro:', error)
