@@ -119,6 +119,21 @@ confirmarOrden.addEventListener('click', async function() {
             console.log('Orden guardada con éxito:', data)
             alert('Orden confirmada con éxito')
             window.location.href = "../usuario/index.html"
+            const eliminarCarrito = await fetch(`${API}/carrito/eliminarCarro`, {
+                method: 'DELETE'
+            });
+
+            if (eliminarCarrito.ok) {
+                console.log('Carrito eliminado con éxito');
+                // Redireccionar después de eliminar el carrito
+                window.location.href = "../usuario/index.html";
+            } else {
+                const errorData = await eliminarCarrito.json();
+                console.error('Error al eliminar el carrito:', errorData);
+                alert('Error al eliminar el carrito, por favor intenta de nuevo');
+                // Aquí podrías decidir qué hacer si falla la eliminación del carrito
+            }
+
         } else {
             const errorData = await res.json()
             console.error('Error al guardar la orden:', errorData)

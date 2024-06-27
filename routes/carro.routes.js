@@ -98,4 +98,18 @@ router.delete('/eliminarProducto/:nombre', async (req, res) => {
 });
 
 
+router.delete('/eliminarCarro', async (req, res) => {
+    try {
+        
+        const carritoData = [];
+
+        await writeFile('./data/carrito.json', JSON.stringify(carritoData, null, 2))
+
+        res.status(200).json(carritoData); // Devolver el carrito vacío como respuesta
+    } catch (error) {
+        console.error('Error al eliminar el carrito:', error);
+        res.status(500).json({ mensaje: 'Error al eliminar el carrito' });
+    }
+})
+
 export default router
