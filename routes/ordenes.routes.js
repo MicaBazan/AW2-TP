@@ -2,6 +2,7 @@ import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
 import axios from 'axios'
 
+
 const fileUsuarios = await readFile('./data/usuarios.json', 'utf-8')
 const usuariosData = JSON.parse(fileUsuarios)
 
@@ -66,6 +67,33 @@ router.get('/obtenerOrdenes', async (req, res) =>{
         res.status(200).json(ordenesData)
     } catch (error) {
         res.status(500).json({mensaje: 'Error al obtener las ordenes de compra'})
+    }
+})
+
+router.put('/modificarOrden/:id', async (req, res) =>{
+    const id = req.params.id
+    const {estado} = req.body
+
+    const ordenEncontrada = ordenesData.findIndex(orden => orden.id == id)
+    if(ordenEncontrada === -1){
+        return res.status(400).json('Orden no encontrada')
+    }
+
+    ordenesData[ordenEncontrada] = {
+        ...ordenesData[ordenEncontrada],
+        id: ordenEncontrada.id,
+        idUsuario: ordenEncontrada.idUsuario,
+        fecha: ordenEncontrada.fecha,
+        productos: ordenEncontrada.productos,
+        total: ordenEncontrada.total,
+        estado: estado
+    }
+
+    try {
+        await writeFile('/data/ordenes.json', JSON.stringify(ordenesData, null, 2))
+        res.status(200).json('Orden actualizada correctamente')
+    } catch (error) {
+        res.status(500).json('Error al actualizar el estado de la orden')
     }
 })
 
