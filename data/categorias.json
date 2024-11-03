@@ -1,18 +1,18 @@
 [
     {
         "idCategoria":1,
-        "nombre":"Pollo"    
+        "nombre":"Panadería Tradicional"    
     },
     {
         "idCategoria":2,
-        "nombre":"Cerdo"    
+        "nombre":"Masa Madre"    
     },
     {
         "idCategoria":3,
-        "nombre":"Congelados"    
+        "nombre":"Reposteria"    
     },
     {
         "idCategoria":4,
-        "nombre":"Huevos" 
+        "nombre":"Bollería Salada" 
     }
 ]
