@@ -70,5 +70,13 @@
     "precio": 3830,
     "descripcion": "Los Nuggets de pollo con queso son ideales para grandes y chicos! Probalos en picadas, para untar con salsitas o para comerlos con una rica guarnición!.",
     "imagen": "../../recursos/image/nuggets.png"
+  },
+  {
+    "id": 10,
+    "nombre": "ERTYU",
+    "idCategoria": 1,
+    "precio": "78",
+    "descripcion": "asdfggfdfgh",
+    "imagen": "url"
   }
 ]
