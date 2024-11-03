@@ -4,71 +4,71 @@
     "nombre": "SC BAGEL CON CHIA X 12",
     "idCategoria": 1,
     "precio": 6900,
-    "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
+    "descripcion": "Bagels elaborados con harina de trigo y semillas de chía, aportando un sabor único y beneficios nutritivos.",
     "imagen": "../../recursos/image/bagel.PNG"
   },
   {
     "id": 2,
     "nombre": "SC BAGUETIN BLANCO X 12",
-    "idCategoria": 1,
+    "idCategoria": 2, 
     "precio": 10000,
-    "descripcion": "EL pollo parrillero ya viene listo y condimentado para la parrilla y los exquisitos chorizos de pollo más la inigualable salchicha parrillera.",
+    "descripcion": "Baguetines blancos frescos, hechos con harina de trigo de alta calidad y una pizca de sal.",
     "imagen": "../../recursos/image/baguetin.PNG"
   },
   {
     "id": 3,
     "nombre": "PE PAN DE CAMPO X 1",
-    "idCategoria": 4,
+    "idCategoria": 2,
     "precio": 8000,
-    "descripcion": "1 pollo = 4 comidas. ¡Super rendidor! hacemos 4 recetas distintas con 1 solo pollo, para que disfrutes en familia con estas recetas económicas y riquísimas.",
+    "descripcion": "Pan de campo, crujiente por fuera y suave por dentro, hecho con harina integral y fermento natural.",
     "imagen": "../../recursos/image/campo.PNG"
   },
   {
     "id": 4,
     "nombre": "RP TORTA CARROT CAKE ENTERA",
-    "idCategoria": 4,
+    "idCategoria": 3,
     "precio": 6000,
-    "descripcion": "30 Huevos Pastoriles Medianos (54 a 61.9 gramos cada uno). Para maximizar la calidad del huevo, te recomendamos almacenarnos en la heladera, con la punta hacia abajo.",
+    "descripcion": "Torta de zanahoria elaborada con zanahorias frescas, nueces y un toque de canela, cubierta con crema de queso.",
     "imagen": "../../recursos/image/carrot.PNG"
   },
-  {
+{
     "id": 5,
     "nombre": "RP TORTA BOMBON ENTERA",
-    "idCategoria": 4,
+    "idCategoria": 3,
     "precio": 3000,
-    "descripcion": "12 Huevos Pastoriles Grandes (62 a 69.9 gramos cada uno). Para maximizar la calidad del huevo, te recomendamos almacenarnos en la heladera, con la punta hacia abajo.",
+    "descripcion": "Torta bombón, hecha con capas de bizcocho de chocolate y crema de dulce de leche, decorada con chocolate.",
     "imagen": "../../recursos/image/bombom.PNG"
   },
   {
     "id": 6,
     "nombre": "RP TORTA CHEESECAKE ENTERA",
-    "idCategoria": 4,
+    "idCategoria": 3,
     "precio": 2100,
-    "descripcion": "6 Huevos Pastoriles Grandes (62 a 69.9 gramos cada uno). Para maximizar la calidad del huevo, te recomendamos almacenarnos en la heladera, con la punta hacia abajo.",
+    "descripcion": "Deliciosa cheesecake con una base de galletas y un suave relleno de queso crema y vainilla.",
     "imagen": "../../recursos/image/chees.PNG"
   },
   {
     "id": 7,
     "nombre": "SC FOCACCIA CON TOMATE  X 4 UNIDADES",
-    "idCategoria": 3,
+    "idCategoria": 4, 
     "precio": 8370,
-    "descripcion": "Las hamburguesas de pollo son riquísimas, muy fáciles de cocinar y son sin TACC! Este pack de 12 unidades te permite consumir la cantidad que quieras y siempre tenerlas guardadas en el freezer. ¡Super práctico y accesible!.",
+    "descripcion": "Focaccias con tomate, hechas con masa de pan de trigo y cubiertas con rodajas de tomate fresco y hierbas.",
     "imagen": "../../recursos/image/focaccia.PNG"
   },
   {
     "id": 8,
     "nombre": "PE PAN ALEMAN CON GIRASOL X 1",
-    "idCategoria": 3,
+    "idCategoria": 2, 
     "precio": 4170,
-    "descripcion": "Los medallones de pollo son ideales para resolver de manera rápida y rica cualquier almuerzo o cena! Probalos y descubrí una nueva solución a tus comidas de todos los días.",
+    "descripcion": "Pan alemán con semillas de girasol, rico en fibra y sabor, ideal para un desayuno saludable.",
     "imagen": "../../recursos/image/aleman.PNG"
   },
   {
     "id": 9,
     "nombre": "SC PAN CAMPIÑA EN RODAJAS X 4 UNIDADES (corte horizontal)",
-    "idCategoria": 3,
+    "idCategoria": 2, 
     "precio": 3830,
-    "descripcion": "Los Nuggets de pollo con queso son ideales para grandes y chicos! Probalos en picadas, para untar con salsitas o para comerlos con una rica guarnición!.",
+    "descripcion": "Pan campiña en rodajas, hecho con una mezcla de harinas y semillas, ideal para preparar sandwiches.",
     "imagen": "../../recursos/image/campiña.PNG"
   }
 ]
