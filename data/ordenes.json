@@ -2,42 +2,12 @@
   {
     "id": 1,
     "idUsuario": 2,
-    "fecha": "2024-06-27T04:09:39.457Z",
-    "productos": [
-      {
-        "idProducto": 2,
-        "cant": 3
-      },
-      {
-        "idProducto": 1,
-        "cant": 2
-      }
-    ],
-    "total": 43800,
-    "estado": "Pendiente"
-  },
-  {
-    "id": 2,
-    "idUsuario": 3,
-    "fecha": "2024-06-27T16:05:16.519Z",
+    "fecha": "2024-11-03T22:19:26.548Z",
     "productos": [
       {
         "idProducto": 1,
-        "cant": 4
+        "cant": 1
       },
-      {
-        "idProducto": 2,
-        "cant": 3
-      }
-    ],
-    "total": 57600,
-    "estado": "Pendiente"
-  },
-  {
-    "id": 3,
-    "idUsuario": 2,
-    "fecha": "2024-11-03T02:27:00.582Z",
-    "productos": [
       {
         "idProducto": 2,
         "cant": 1
@@ -47,7 +17,32 @@
         "cant": 1
       }
     ],
-    "total": 18000,
+    "total": 24900,
+    "estado": "Pendiente"
+  },
+  {
+    "id": 2,
+    "idUsuario": 2,
+    "fecha": "2024-11-03T22:28:02.226Z",
+    "productos": [
+      {
+        "idProducto": 1,
+        "cant": 2
+      },
+      {
+        "idProducto": 3,
+        "cant": 1
+      },
+      {
+        "idProducto": 5,
+        "cant": 1
+      },
+      {
+        "idProducto": 4,
+        "cant": 1
+      }
+    ],
+    "total": 30800,
     "estado": "Pendiente"
   }
 ]
